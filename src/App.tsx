@@ -1,11 +1,10 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
+import MainWrapper from './component/wrapper/MainWrapper';
 
 function App() {
   return (
-    <>
-      
-    </>
+    <MainWrapper />
   );
 }
 
