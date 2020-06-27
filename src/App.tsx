@@ -3,9 +3,7 @@ import './App.scss';
 import MainWrapper from './component/wrapper/MainWrapper';
 
 function App() {
-  return (
-    <MainWrapper />
-  );
+    return <MainWrapper />;
 }
 
 export default App;
