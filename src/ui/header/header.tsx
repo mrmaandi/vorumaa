@@ -1,5 +1,4 @@
 import React from 'react';
-import './header.scss';
 
 interface Link {
     id: string;
@@ -11,20 +10,22 @@ interface HeaderProps {
 }
 
 class Header extends React.Component<HeaderProps, {}> {
-    /*     
-    constructor(props: HeaderProps) {
-        super(props);
-    } 
-    */
-
     render() {
         return (
-            <>
-                title
-                {this.props.links.map((link: Link) => {
-                    return link.title;
-                })}
-            </>
+            <header>
+                <a href="#landing" className="logo">
+                    Turvaline Võrumaa
+                </a>
+                <ul>
+                    {this.props.links.map((link: Link) => {
+                        return (
+                            <li key={link.id}>
+                                <a href={link.id}>{link.title}</a>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </header>
         );
     }
 }

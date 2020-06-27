@@ -1,0 +1,35 @@
+.container {
+  z-index: 2;
+  position: absolute;
+  top: 100vh;
+  color: grey;
+}
+
+.container .content {
+  line-height: 35px;
+  font-weight: lighter;
+  font-size: 18px;
+  padding: 60px 15% 60px 15%;
+  text-align: justify;
+  text-justify: inter-word;
+  word-wrap: break-word;
+  white-space:pre-wrap;
+}
+
+.container h1 {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.theme-gray {
+  background-color: #FBFBFB;
+}
+
+.theme-white {
+  background-color: #FFFFFF;
+}
+
+.theme-blue {
+  background-color: #193448;
+  color: white;
+}

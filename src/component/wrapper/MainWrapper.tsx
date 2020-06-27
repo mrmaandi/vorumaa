@@ -1,12 +1,17 @@
 import React from 'react';
-import Header from '../header/HeaderComponent';
 import Landing from '../../ui/landing/landing';
+import HeaderComponent from '../header/HeaderComponent';
+import ContentSection from '../content/ContentSection';
 
 class MainWrapper extends React.Component {
     render() {
         return (
             <>
-                <Landing />
+                <HeaderComponent />
+                <div className="wrapper">
+                    <ContentSection />
+                    <Landing />
+                </div>
             </>
         );
     }

@@ -1,0 +1,18 @@
+.button {
+  display: inline-block;
+  width: 200px;
+  background-color: #000000;
+  mix-blend-mode: hard-light;
+  opacity: 0.85;
+
+  border: none;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 25px;
+}
+
+a.button  {
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+}
