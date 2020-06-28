@@ -1,0 +1,14 @@
+$grid-width: 100%;
+$column-count: 2;
+$column-width: $grid-width/$column-count;
+
+.grid {
+  &__container {
+    display: grid;
+    grid-template-columns: $column-width $column-width;
+  }
+
+  &__item {
+
+  }
+}

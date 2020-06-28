@@ -16,6 +16,11 @@ class HeaderComponent extends React.Component {
             <Header
                 links={[
                     {
+                        id: 'https://www.facebook.com/turvalinevorumaa/',
+                        title: 'facebook-square',
+                        icon: true,
+                    },
+                    {
                         id: '#activities',
                         title: 'Käesolevad tegevused',
                     },

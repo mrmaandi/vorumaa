@@ -13,7 +13,8 @@ class Landing extends React.Component {
                         ruumis.
                     </h1>
                     <Separator />
-                    <Button label="Tutvu tegevustega" url="#activities" />
+                    <Separator />
+                    <Button label="Tutvu tegevustega" url="#activities" icon="angle-right" />
                 </div>
             </section>
         );

@@ -49,6 +49,13 @@ module.exports = {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,
                 loader: 'file-loader',
             },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                },
+            },
         ],
     },
     plugins: [

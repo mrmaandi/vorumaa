@@ -3,6 +3,10 @@ import Section from '../../ui/section/section';
 import Collapse from '../../ui/collapse/collapse';
 import Separator from '../../ui/separator/separator';
 import Table from '../../ui/table/table';
+import Grid from '../../ui/grid/grid';
+import GridColumn from '../../ui/grid/grid-column';
+import Partner1 from '../../assets/partner-1.png';
+import Partner2 from '../../assets/partner-2.png';
 
 class ContentSection extends React.Component {
     render() {
@@ -166,33 +170,41 @@ class ContentSection extends React.Component {
     private renderPartners() {
         return (
             <Section id="partners" title="Toetajad">
-                Vabatahtlikke turvalisusloojate tegevust on toetanud
-                <br />
-                <br />
-                Kodanikuühiskonna Sihtkapital
-                <br />
-                Andermi OÜ
-                <br />
-                Navi Külaselts MTÜ
-                <br />
-                Võru vallavalitsus
-                <br />
-                Haanja Rattaklubi
-                <br />
-                Antsla Vallavalitsus
-                <br />
-                Võru TÜ
-                <br />
-                Kaitseliidu Võrumaa malev
-                <br />
-                Lasva Vallavalitsus
-                <br />
-                Rõuge Vallavalitsus
-                <br />
-                Orienteerumisklubi Võru
-                <br />
-                Kauplus K-Rauta
-                <br />
+                <Grid>
+                    <GridColumn>
+                        Vabatahtlikke turvalisusloojate tegevust on toetanud
+                        <br />
+                        <br />
+                        Kodanikuühiskonna Sihtkapital
+                        <br />
+                        Andermi OÜ
+                        <br />
+                        Navi Külaselts MTÜ
+                        <br />
+                        Võru vallavalitsus
+                        <br />
+                        Haanja Rattaklubi
+                        <br />
+                        Antsla Vallavalitsus
+                        <br />
+                        Võru TÜ
+                        <br />
+                        Kaitseliidu Võrumaa malev
+                        <br />
+                        Lasva Vallavalitsus
+                        <br />
+                        Rõuge Vallavalitsus
+                        <br />
+                        Orienteerumisklubi Võru
+                        <br />
+                        Kauplus K-Rauta
+                        <br />
+                    </GridColumn>
+                    <GridColumn>
+                        <img src={Partner1} width="400"/><br/>
+                        <img src={Partner2} width="400"/>
+                    </GridColumn>
+                </Grid>
             </Section>
         );
     }

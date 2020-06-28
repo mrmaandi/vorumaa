@@ -1,3 +1,5 @@
+@import 'typography.scss';
+
 @import 'header/header.scss';
 @import 'landing/landing.scss';
 @import 'section/section.scss';
@@ -5,6 +7,7 @@
 @import 'separator/separator.scss';
 @import 'collapse/collapse.scss';
 @import 'table/table.scss';
+@import 'grid/grid.scss';
 
 .wrapper {
   height: 100%;
@@ -15,3 +18,4 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
+

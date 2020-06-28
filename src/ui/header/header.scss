@@ -27,6 +27,15 @@ header .logo {
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: 0.6s;
+
+  img {
+    transition: 0.6s;
+    min-width: 50%;
+    min-height: 50%;
+    max-width:75%;
+    max-height:75%;
+    vertical-align: middle;
+  }
 }
 
 header ul {
@@ -46,12 +55,42 @@ header ul li a {
   margin: 0 15px;
   text-decoration: none;
   color: #000;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-weight: 500;
-  transition: 0.6s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  text-transform: uppercase;
+
+  &:after {
+    bottom: -2;
+    content: "";
+    display: block;
+    height: 3px;
+    left: 50%;
+    position: absolute;
+    background: #000 none repeat scroll 0 0;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
+}
+
+a.link--icon {
+  vertical-align: middle;
+  height: 30px;
 }
 
 header.sticky .logo,
 header.sticky ul li a {
   color: #000;
+
+  img {
+    transition: 0.6s;
+
+    max-width:50%;
+    max-height:50%;
+  }
 }

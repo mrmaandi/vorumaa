@@ -1,18 +1,29 @@
-.button {
-  display: inline-block;
-  width: 200px;
-  background-color: #000000;
-  mix-blend-mode: hard-light;
-  opacity: 0.85;
+a {
+  &.button {
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
 
-  border: none;
-  text-align: center;
-  line-height: 50px;
-  border-radius: 25px;
+    display: inline-block;
+    width: 230px;
+    background-color: #fff;
+    mix-blend-mode: hard-light;
+    opacity: 0.9;
+
+    text-align: center;
+    line-height: 45px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    position:relative;
+  }
 }
 
-a.button  {
-  text-decoration: none;
-  color: white;
-  font-weight: 200;
+.button__wrapper {
+  display: flex;
+  align-items: center; /* vertical alignment */
+  justify-content: center; /* horizontal alignment */
+}
+
+.button__icon {
+  position: absolute;
 }

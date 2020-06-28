@@ -15,7 +15,7 @@ class Section extends React.Component<ISectionProps, {}> {
             <div id={this.props.id} className={'content ' + this.getTheme()}>
                 {this.props.title && (
                     <>
-                        <h1>{this.props.title}</h1>
+                        <h1 className="title">{this.props.title}</h1>
                         <Separator />
                     </>
                 )}
