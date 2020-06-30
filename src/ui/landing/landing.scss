@@ -5,6 +5,7 @@
   transform-style: inherit;
   width: 100vw;
   text-align: center;
+  z-index: 2;
 }
 
 .landing .content {
@@ -18,9 +19,11 @@
 .content {
   h1 {
     font-style: normal;
-    font-weight: 100;
+    font-weight: 200;
     font-size: 28px;
-    line-height: 28px;
+    line-height: 32px;
+    mix-blend-mode: screen;
+    opacity: 0.9;
   }
 }
 
@@ -37,10 +40,40 @@
   right: 0;
   bottom: 0;
   display: block;
-  background: url("https://i.imgur.com/fsX8A4O.jpg");
-  background-size: cover;
   transform-origin: center center 0;
   transform: translateZ(-1px) scale(2);
   z-index: -1;
   min-height: 100vh;
+}
+
+#landing-video {
+  position: fixed;
+  z-index: 1;
+
+  width: 100%;
+  height: auto;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #landing-video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #landing-video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  #landing-video {
+    display: none;
+  }
+  .landing {
+    background: url("https://i.imgur.com/fsX8A4O.jpg");
+    background-size: cover;
+  }
 }

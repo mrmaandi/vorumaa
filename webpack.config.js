@@ -56,6 +56,10 @@ module.exports = {
                     name: '[name].[ext]',
                 },
             },
+            {
+                test: /\.mp4$/,
+                use: 'file-loader?name=videos/[name].[ext]',
+            },
         ],
     },
     plugins: [
