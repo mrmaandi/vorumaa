@@ -26,9 +26,11 @@ class Header extends React.Component<HeaderProps, {}> {
                     {this.props.links.map((link: Link) => {
                         if (link.icon) {
                             return (
-                                <a className="link--icon" href={link.id}>
-                                    <Icon name={link.title} size={28} />
-                                </a>
+                                <span key={link.id}>
+                                    <a className="link--icon" href={link.id}>
+                                        <Icon name={link.title} size={28} />
+                                    </a>
+                                </span>
                             );
                         }
                         return (
