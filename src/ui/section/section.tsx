@@ -1,40 +1,24 @@
 import React from 'react';
 import Separator from '../separator/separator';
-
-type Theme = 'gray' | 'white' | 'blue';
+import { Typography, Box } from '@material-ui/core';
 
 interface ISectionProps {
     id: string;
     title?: string;
-    theme?: Theme;
 }
 
-class Section extends React.Component<ISectionProps, {}> {
-    render() {
+class Section extends React.Component<ISectionProps> {
+    render(): JSX.Element {
         return (
-            <div id={this.props.id} className={'content ' + this.getTheme()}>
+            <Box id={this.props.id} component="span" m={10}>
                 {this.props.title && (
-                    <>
-                        <p className="title">{this.props.title}</p>
-                        <Separator />
-                    </>
+                    <Typography variant="h3" gutterBottom>
+                        {this.props.title}
+                    </Typography>
                 )}
-                {this.props.children}
-            </div>
+                <div className="section__body">{this.props.children}</div>
+            </Box>
         );
-    }
-
-    private getTheme() {
-        switch (this.props.theme) {
-            case 'gray':
-                return 'theme-gray';
-            case 'white':
-                return 'theme-white';
-            case 'blue':
-                return 'theme-blue';
-            default:
-                return 'theme-white';
-        }
     }
 }
 
