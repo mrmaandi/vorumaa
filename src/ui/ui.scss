@@ -1,13 +1,13 @@
-@import 'typography.scss';
-
-@import 'header/header.scss';
-@import 'landing/landing.scss';
 @import 'section/section.scss';
-@import 'button/button.scss';
-@import 'separator/separator.scss';
-@import 'collapse/collapse.scss';
-@import 'table/table.scss';
-@import 'grid/grid.scss';
+@import 'landing/landing.scss';
+@import 'header/header.scss';
+
+// @import 'typography.scss';
+// @import 'button/button.scss';
+// @import 'separator/separator.scss';
+// @import 'collapse/collapse.scss';
+// @import 'table/table.scss';
+// @import 'grid/grid.scss';
 
 .wrapper {
   height: 100%;

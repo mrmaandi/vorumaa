@@ -3,15 +3,13 @@ import Header from '../../ui/header/header';
 
 class HeaderComponent extends React.Component {
     componentDidMount(): void {
-        window.addEventListener('wheel', function (event) {
+        window.addEventListener('scroll', function (event) {
             const header = document.querySelector('header');
-
-            // @ts-ignore
-            header && header.classList.toggle('sticky', document.getElementById('landing').getBoundingClientRect().top < 0);
+            header && header.classList.toggle('sticky', window.scrollY > 0);
         });
     }
 
-    render() {
+    render(): JSX.Element {
         return (
             <Header
                 links={[

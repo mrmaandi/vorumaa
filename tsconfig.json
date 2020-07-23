@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "lib": [
+      "es6",
       "dom",
       "dom.iterable",
       "esnext"
@@ -18,6 +19,6 @@
     "jsx": "react"
   },
   "include": [
-    "src", "typings/typings.d.ts"
+    "src", "typings/typings.d.ts", "typings/material-ui.d.ts"
   ]
 }

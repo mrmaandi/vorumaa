@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../../assets/logo.png';
 import Icon from '../icon/icon';
+import { Container } from '@material-ui/core';
 
 interface Link {
     id: string;
@@ -12,13 +13,10 @@ interface HeaderProps {
     links: Link[];
 }
 
-class Header extends React.Component<HeaderProps, {}> {
-    render() {
+class Header extends React.Component<HeaderProps> {
+    render(): JSX.Element {
         return (
             <header>
-                {/*<a href="#landing" className="logo">
-                    Turvaline Võrumaa
-                </a>*/}
                 <a href="#landing" className="logo">
                     <img src={Logo} />
                 </a>

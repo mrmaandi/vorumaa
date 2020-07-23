@@ -6,14 +6,17 @@
 }
 
 .container .content {
-    line-height: 35px;
-    font-weight: lighter;
-    font-size: 20px;
     padding: 60px 20% 40px 20%;
-    text-align: justify;
-    text-justify: inter-word;
-    word-wrap: break-word;
-    white-space: pre-wrap;
+
+    div.section__body {
+        line-height: 35px;
+        font-weight:  normal;
+        font-size: 18px;
+        text-align: justify;
+        text-justify: inter-word;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
 }
 
 .theme-gray {
