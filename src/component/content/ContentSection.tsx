@@ -21,7 +21,31 @@ const BoxContent: React.FC<IBoxContent> = (props: IBoxContent) => {
     );
 };
 
-class ContentSection extends React.Component {
+interface IContentSectionState {
+    activities: any;
+    accomplishments: any;
+}
+
+class ContentSection extends React.Component<{}, IContentSectionState> {
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            activities: null,
+            accomplishments: null,
+        };
+    }
+
+    componentDidMount(): void {
+        fetch('https://public-api.wordpress.com/wp/v2/sites/turvalinevorumaa.wordpress.com/pages/50')
+            .then((accomplishments) => accomplishments.json())
+            .then((json) => this.setState({ accomplishments: json }));
+
+        fetch('https://public-api.wordpress.com/wp/v2/sites/turvalinevorumaa.wordpress.com/pages/31')
+            .then((activities) => activities.json())
+            .then((json) => this.setState({ activities: json }));
+    }
+
     render(): JSX.Element {
         return (
             <>
@@ -35,53 +59,36 @@ class ContentSection extends React.Component {
     }
 
     private renderActivitiesSection() {
+        const data = this.state.activities;
+
+        if (!data) {
+            return null;
+        }
+
+        const title = data.title.rendered;
+        const content = data.content.rendered;
+
+        const contentRegex = /(?<=\[content\])([\S\s]*?)(?=\[\/content\])/g;
+        const collapseRegex = /(?<=\[collapse\])([\S\s]*?)(?=\[\/collapse\])/g;
+
+        const contentBody = contentRegex.exec(content);
+        const collapseBody = collapseRegex.exec(content);
+
         return (
             <div className={this.getTheme('white')}>
                 <Container maxWidth="md">
-                    <Section id="activities" title="Käesolevad tegevused">
+                    <Section id="activities" title={title}>
                         <Typography variant="body1" align="justify" gutterBottom>
                             <BoxContent>
-                                Võrumaa noorte kaasamine turvalise kogukonnaelu suurendamiseks. Projekt viiakse läbi
-                                ajavahemikul 1.02.2018 kuni 30.10.2020. Peale seda hinnatakse saavutatut ja vajadusel
-                                jätkatakse samalaadse projektiga. Projekt on kooskõlas Võrumaa Partnerluskogu meetme
-                                eesmärgiga. Võrumaa noored osalevad aktiivselt ja oskuslikult oma kogukonnaelu
-                                turvalisuse suurendamise eesmärgi nimel aidates kaasa kogukondade aktiivsusele läbi
-                                kogemuste ja ühistegevuse. Projekt võimaldab väärtustada noorte suhtumist kogukonda ja
-                                pakub võimalust kogukonnaellu panustada. Tulenevalt Võru maakonna
-                                arendusarendusstrateegia 2014 – 2025 väljakutsetest, baasressurssidest ja väärtustest on
-                                püstitatud visioon aastaks 2025: Võrumaa on atraktiivne Kagu-Eesti elu- ja töökeskkond,
-                                mida iseloomustab tugev majandus, konkurentsivõimeline haridus, oma kultuur ja eripära,
-                                kaasaegne tervishoid ja sotsiaalhoolekanne ning kaasav ja kestlik kogukond. Visioonist
-                                lähtuvalt on Võrumaal mõnedeks eesmärkideks: Võrumaa on koht, kus inimesed elavad
-                                täisväärtuslikult ja kaua (kaasaegne tervishoid ja sotsiaalhoolekanne); Võrumaalased on
-                                tugeva ja nakatava piirkondliku enesetunnetusega (kaasav ja kestlik kogukond).
+                                <div dangerouslySetInnerHTML={{ __html: contentBody ? contentBody[1] : '' }} />
                             </BoxContent>
                         </Typography>
                         <Collapsible text="Rohkem infot">
                             <Typography variant="body1" align="justify" gutterBottom>
                                 <BoxContent>
-                                    Kogukonna valdkondlikeks fookusteks on tulenevalt hetkeolukorra ja SWOT-analüüsist
-                                    hajaasustuse ja maakonna keskuse arendamine, noortele mitmekesiste arenguvõimaluste
-                                    loomine – pakub võimalust oma vaba aega sisukalt veeta ning seob neid tihedamalt
-                                    kodukohaga; kogukondlike koostöövõrgustike arendamine – kindlustab koostöö edenemise
-                                    piirkonnas ning aitab kaasa kohaliku identiteedi tugevnemisele.
-                                    <br />
-                                    <br />
-                                    Projekti eesmärk:
-                                    <br />
-                                    Anda läbi teoreetiliste koolituste ja praktiliste harjutuste kogukonna noortele
-                                    teadmisi ja oskusi maastikul inimeste otsimiseks, esmaabi andmiseks, koostööks
-                                    politsei ja teiste operatiivstruktuuridega. Tõsta kogukonna teadlikust ja anda
-                                    teadmisi ning oskusi ise oma kogukonna hüvanguks turvalisuse loomiseks läbi
-                                    koolituste. Koolituste eesmärgiks on anda teadmisi oma vara kaitseks, turvaliste
-                                    kogukondlike ürituste ja spordivõistluste korraldamiseks, internetiohtude
-                                    äratundmiseks ja vältimiseks, ohutuks liiklemiseks, meelemürkide kahjulikkusest,
-                                    radikaliseerumise märkamiseks ja ennetamiseks.
-                                    <br />
-                                    <br />
+                                    <div dangerouslySetInnerHTML={{ __html: collapseBody ? collapseBody[1] : '' }} />
                                 </BoxContent>
                             </Typography>
-                            <Table />
                         </Collapsible>
                     </Section>
                 </Container>
@@ -90,86 +97,34 @@ class ContentSection extends React.Component {
     }
 
     private renderAccomplishmentsSection() {
+        const data = this.state.accomplishments;
+
+        if (!data) {
+            return null;
+        }
+
+        const title = data.title.rendered;
+        const content = data.content.rendered;
+
+        const contentRegex = /(?<=\[content\])([\S\s]*?)(?=\[\/content\])/g;
+        const collapseRegex = /(?<=\[collapse\])([\S\s]*?)(?=\[\/collapse\])/g;
+
+        const contentBody = contentRegex.exec(content);
+        const collapseBody = collapseRegex.exec(content);
+
         return (
             <div className={this.getTheme('gray')}>
                 <Container maxWidth="md">
-                    <Section id="accomplishments" title="Saavutused">
+                    <Section id="accomplishments" title={title}>
                         <Typography variant="body1" align="justify" gutterBottom>
                             <BoxContent>
-                                MTÜ Turvaline Võrumaa loodi 2. mail 2016. Septembrini 2016 tegelesime
-                                turvalisusprobleemide kaardistamisega, mille lahendamisel saavad vabatahtlikud ise oma
-                                kogukonnas palju ära teha. Kohtutud ja vesteldud on erinevate spordiühingutega ning
-                                vabatahtlikega, kes soovivad oma panuse anda. Septembris 2016 alustasime projektide
-                                kirjutamist KOP (kohaliku omaalgatuse programm) programmi toetuste saamiseks reguleerija
-                                koolituse finantseerimiseks ja abipolitseinikele taskulampide soetamiseks. Jaanuaris
-                                2017 soetasime 3000 helkurit, mida vabatahtlikud jagasid isikutele, kel helkur puudus ja
-                                kes pimedal ajal võisid ohtu sattuda. Vabatahtlike abiga helkurite jagamisega edenes
-                                kogukonna algatus turvalise elukeskkonna loomisel, kuna vabatahtlikud said ise midagi
-                                ära teha oma kogukonnas turvalisuse loomisel. 27-28.01.2017 korraldasime 15
-                                vabatahtlikule, kes vabast tahtest ja tasu saamata soovivad oma kogukonna turvalisuse
-                                nimel tegeleda liiklusohutuse tagamisega Võru maakonnas, reguleerija III astme
-                                pädevuskoolituse. Koolitus vastas Liiklusseaduse nõuetele. Neid vabatahtlikke on
-                                võimalik kaasata erinevatele üritustele liikluse reguleerija või kasvõi
-                                parklakorraldajana. Huvi korral võtke meiega ühendust.
+                                <div dangerouslySetInnerHTML={{ __html: contentBody ? contentBody[1] : '' }} />
                             </BoxContent>
                         </Typography>
                         <Separator small />
                         <Collapsible text="Rohkem infot">
                             <BoxContent>
-                                <p>
-                                    Meist kirjutati ka kohalikus meedias:{' '}
-                                    <a href="http://www.lounaleht.ee/index.php?page=1&amp;id=21263">
-                                        http://www.lounaleht.ee/index.php?page=1&amp;id=21263
-                                    </a>
-                                </p>
-                                <p>
-                                    Kuna esimesel korral ei õnnestunud taskulampide soetamiseks toetust saada, siis
-                                    esitasime KÜSK-i (kodanikuühiskonna sihtkapital) uue taotluse, mis ka rahuldati. 27.
-                                    juulil 2017 andsime lambid üle Lõuna prefektuuri Võru abipolitseinike rühmajuhile.
-                                    Samal päeval allkirjastasime koostöökokkuleppe Lõuna prefetuuriga. Ka sel korral
-                                    tundis meedia meie vastu huvi:{' '}
-                                    <a href="https://lounaeestlane.ee/vorumaa-abipolitseinikud-varustati-taskulampidega/">
-                                        https://lounaeestlane.ee/vorumaa-abipolitseinikud-varustati-taskulampidega/
-                                    </a>
-                                </p>
-                                <p>
-                                    30.08.2017 toimus koostöös politseiga ennetusliku sisuga vigursõidu võistlus
-                                    algajatele autojuhtidele „See pole mingi põlluralli“. Algajatel tuli end proovile
-                                    panna Liiklustesti lahendamises, vigursõidus, autoratta vahetuses ja rallikaga
-                                    kihutamises. Selle kohta võib lugeda ka:&nbsp;
-                                    <a
-                                        href="http://www.lounaleht.ee/?page=1&amp;id=22439"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        http://www.lounaleht.ee/?page=1&amp;id=22439
-                                    </a>
-                                    &nbsp;või&nbsp;
-                                    <a
-                                        href="https://lounaeestlane.ee/algajad-autojuhid-said-vorus-proovida-oma-soiduoskusi/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        https://lounaeestlane.ee/algajad-autojuhid-said-vorus-proovida-oma-soiduoskusi/
-                                    </a>
-                                </p>
-                                <p>
-                                    <strong>
-                                        Liitusime eeskujukampaaniaga AGA MINA. Meie sõnum on: Aga mina oskan otsida
-                                        eksinut.
-                                    </strong>
-                                </p>
-                                <p>
-                                    5-7 märts 2018 toimusid Võrumaal kokku neljas koolis sissejuhatavad koolitused
-                                    maastikuotsinguteks. Kokku oli nõus vabatahtlikuna maastikuotsingutel osalema 121
-                                    koolinoort.
-                                </p>
-                                <p>Põhikoolitused koos praktiliste harjutustega saavad toimuma suvekuudel.</p>
-                                <p>
-                                    Kui sul on võimalus rahaliselt toetada vabatahtlike tegevust või aidata projektide
-                                    läbiviimiseks vajaliku omafinantseeringu saavutamist, siis saad selle kanda MTÜ
-                                    Turvaline Võrumaa arveldusarvele EE034204278607433303 COOP Pank.
-                                </p>
+                                <div dangerouslySetInnerHTML={{ __html: collapseBody ? collapseBody[1] : '' }} />
                             </BoxContent>
                         </Collapsible>
                     </Section>

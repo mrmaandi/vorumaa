@@ -1,5 +1,4 @@
 import React from 'react';
-import Separator from '../separator/separator';
 import { Typography, Box } from '@material-ui/core';
 
 interface ISectionProps {
