@@ -68,8 +68,8 @@ class ContentSection extends React.Component<{}, IContentSectionState> {
         const title = data.title.rendered;
         const content = data.content.rendered;
 
-        const contentRegex = /(?<=\[content\])([\S\s]*?)(?=\[\/content\])/g;
-        const collapseRegex = /(?<=\[collapse\])([\S\s]*?)(?=\[\/collapse\])/g;
+        const contentRegex = /\[content\]([\s\S]*?)\[\/content\]/g;
+        const collapseRegex = /\[collapse\]([\s\S]*?)\[\/collapse\]/g;
 
         const contentBody = contentRegex.exec(content);
         const collapseBody = collapseRegex.exec(content);
@@ -106,8 +106,8 @@ class ContentSection extends React.Component<{}, IContentSectionState> {
         const title = data.title.rendered;
         const content = data.content.rendered;
 
-        const contentRegex = /(?<=\[content\])([\S\s]*?)(?=\[\/content\])/g;
-        const collapseRegex = /(?<=\[collapse\])([\S\s]*?)(?=\[\/collapse\])/g;
+        const contentRegex = /\[content\]([\s\S]*?)\[\/content\]/g;
+        const collapseRegex = /\[collapse\]([\s\S]*?)\[\/collapse\]/g;
 
         const contentBody = contentRegex.exec(content);
         const collapseBody = collapseRegex.exec(content);
