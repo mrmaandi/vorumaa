@@ -9,10 +9,11 @@ class MainWrapper extends React.Component {
         return (
             <>
                 <CssBaseline />
-
                 <HeaderComponent />
-                <Landing />
-                <ContentSection />
+                <div className="main-wrapper">
+                    <Landing />
+                    <ContentSection />
+                </div>
             </>
         );
     }

@@ -20,19 +20,19 @@ class HeaderComponent extends React.Component {
                     },
                     {
                         id: '#activities',
-                        title: 'Käesolevad tegevused',
+                        title: 'Toimingud',
                     },
                     {
                         id: '#accomplishments',
                         title: 'Saavutused',
                     },
                     {
-                        id: '#contacts',
-                        title: 'Võta ühendust',
-                    },
-                    {
                         id: '#partners',
                         title: 'Toetajad',
+                    },
+                    {
+                        id: '#contacts',
+                        title: 'Võta ühendust',
                     },
                 ]}
             />

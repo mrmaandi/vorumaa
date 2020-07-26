@@ -1,45 +1,50 @@
 .landing {
-  box-sizing: border-box;
-  min-height: 100vh;
-  position: relative;
-  transform-style: inherit;
-  width: 100vw;
-  text-align: center;
+    min-height: 100vh;
+    position: relative;
+    width: 100vw;
 }
 
 .landing .content {
-  margin: 0;
-  position: absolute;
-  top: 40%;
-  left: 30%;
-  transform: translate(-25%, -50%);
+    min-height: 50vh;
+    padding-top: 10vh;
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
+.cards {
+  max-height: 50vh;
+  display: flex;
+  position: absolute;
+  bottom: 100px;
+} 
+
 .content {
-  h1 {
-    font-style: normal;
-    font-weight: 200;
-    font-size: 28px;
-    line-height: 28px;
-  }
+    h1 {
+        font-style: normal;
+        font-weight: 200;
+        font-size: 28px;
+        line-height: 28px;
+    }
 }
 
 .landing,
 .landing:before {
-  background: 50% 50% / cover;
+    background: 50% 50% / cover;
 }
 
 .landing::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: block;
-  background: url("https://i.imgur.com/5CXxEJ4.png");
-  background-size: cover;
-  transform-origin: center center 0;
-  z-index: -1;
-  min-height: 100vh;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background: url('https://i.imgur.com/5CXxEJ4.png');
+    background-size: cover;
+    transform-origin: center center 0;
+    z-index: -1;
+    min-height: 100vh;
 }
