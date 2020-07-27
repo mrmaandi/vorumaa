@@ -53,7 +53,7 @@ export const CardComponent: React.FC<ICardComponentProps> = (props: ICardCompone
     const theme = useTheme();
 
     const handleClickOpen = () => {
-        props.url ? window.location.replace(props.url) : setOpen(true);
+        props.url ? window.location.assign(props.url) : setOpen(true);
     };
 
     const handleClose = () => {
