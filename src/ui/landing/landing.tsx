@@ -57,7 +57,7 @@ export default function Landing(): JSX.Element {
                                     </Grid> */}
                                     <Grid item md={6} sm={12}>
                                         <CardComponent
-                                            imgUrl="https://i.imgur.com/7iuQJYz.png"
+                                            imgUrl="https://i.imgur.com/fypZzHm.jpg"
                                             pageId={67}
                                             url="https://turvalinevorumaa.wordpress.com/maastikuotsingu-oppus-abrukal/"
                                         />
