@@ -4,6 +4,7 @@ import React from 'react';
 
 interface ICollapseTriggerProps {
     text: string;
+    secondaryText?: string;
     children?: React.ReactNode;
 }
 
@@ -30,7 +31,7 @@ export const Collapsible: React.FC<ICollapseTriggerProps> = (props: ICollapseTri
             <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1bh-content" id="panel1bh-header">
                     <Typography className={classes.heading}>{props.text}</Typography>
-                    <Typography className={classes.secondaryHeading}>{}</Typography>
+                    <Typography className={classes.secondaryHeading}>{props.secondaryText}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>{props.children}</Typography>

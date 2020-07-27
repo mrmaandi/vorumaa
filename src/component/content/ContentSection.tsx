@@ -83,7 +83,7 @@ class ContentSection extends React.Component<{}, IContentSectionState> {
                                 <div dangerouslySetInnerHTML={{ __html: contentBody ? contentBody[1] : '' }} />
                             </BoxContent>
                         </Typography>
-                        <Collapsible text="Rohkem infot">
+                        <Collapsible text="Rohkem infot" secondaryText="Projekti eesmärk ja ajakava">
                             <Typography variant="body1" align="justify" gutterBottom>
                                 <BoxContent>
                                     <div dangerouslySetInnerHTML={{ __html: collapseBody ? collapseBody[1] : '' }} />
@@ -122,7 +122,7 @@ class ContentSection extends React.Component<{}, IContentSectionState> {
                             </BoxContent>
                         </Typography>
                         <Separator small />
-                        <Collapsible text="Rohkem infot">
+                        <Collapsible text="Rohkem infot" secondaryText="MTÜ kajastus meedias ja AGA MINA">
                             <BoxContent>
                                 <div dangerouslySetInnerHTML={{ __html: collapseBody ? collapseBody[1] : '' }} />
                             </BoxContent>
