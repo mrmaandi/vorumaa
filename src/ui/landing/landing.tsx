@@ -41,15 +41,29 @@ export default function Landing(): JSX.Element {
                 <Container maxWidth="lg">
                     <Grid container>
                         <Grid item xs={12} justify="center" alignItems="center">
-                            <Grid container spacing={4} direction="row" alignItems="center" justify="center">
-                                <Grid item md={6} sm={12}>
-                                    <CardComponent
-                                        text="Maastikuotsingu õppus Abrukal"
-                                        secondaryText="24.-26 juulil korraldatud maastikuotsingu koolitus Abruka saarel"
-                                        imgUrl="https://i.imgur.com/7iuQJYz.png"
-                                    />
+                            {/* <Box>
+                                <Typography variant="h4" gutterBottom align="center">
+                                    Viimased tegevused
+                                </Typography>
+                            </Box> */}
+                            <Box mt={6}>
+                                <Grid container spacing={4} direction="row" alignItems="center" justify="center">
+                                    {/* <Grid item md={6} sm={12}>
+                                        <CardComponent
+                                            text="Maastikuotsingu õppus Abrukal"
+                                            secondaryText="24.-26 juulil korraldatud maastikuotsingu koolitus Abruka saarel. 24.-26 juulil korraldatud maastikuotsingu koolitus Abruka saarel. 24.-26 juulil korraldatud maastikuotsingu koolitus Abruka saarel"
+                                            imgUrl="https://i.imgur.com/7iuQJYz.png"
+                                        />
+                                    </Grid> */}
+                                    <Grid item md={6} sm={12}>
+                                        <CardComponent
+                                            imgUrl="https://i.imgur.com/7iuQJYz.png"
+                                            pageId={67}
+                                            url="https://turvalinevorumaa.wordpress.com/maastikuotsingu-oppus-abrukal/"
+                                        />
+                                    </Grid>
                                 </Grid>
-                            </Grid>
+                            </Box>
                         </Grid>
                     </Grid>
                 </Container>
