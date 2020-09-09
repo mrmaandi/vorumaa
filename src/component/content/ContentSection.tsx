@@ -4,6 +4,7 @@ import Separator from '../../ui/separator/separator';
 import Table from '../../ui/table/table';
 import Partner1 from '../../assets/partner-1.png';
 import Partner2 from '../../assets/partner-2.png';
+import Partner3 from '../../assets/partner-3.png';
 import { Typography, Container, Grid, Box } from '@material-ui/core';
 import { Collapsible } from '../../ui/collapse/collapsible';
 
@@ -178,35 +179,39 @@ class ContentSection extends React.Component<{}, IContentSectionState> {
                             <Grid item xs={12}>
                                 <Grid container>
                                     <Grid item md={6}>
-                                        <Typography variant="body1" align="justify" gutterBottom>
-                                            Vabatahtlikke turvalisusloojate tegevust on toetanud
+                                        <Box width={1}>
+                                            <Typography variant="body1" align="justify" gutterBottom>
+                                                Vabatahtlikke turvalisusloojate tegevust on toetanud
+                                                <br />
+                                                <br />
+                                                Kodanikuühiskonna Sihtkapital
+                                                <br />
+                                                Andermi OÜ
+                                                <br />
+                                                Navi Külaselts MTÜ
+                                                <br />
+                                                Võru vallavalitsus
+                                                <br />
+                                                Haanja Rattaklubi
+                                                <br />
+                                                Antsla Vallavalitsus
+                                                <br />
+                                                Võru TÜ
+                                                <br />
+                                                Kaitseliidu Võrumaa malev
+                                                <br />
+                                                Lasva Vallavalitsus
+                                                <br />
+                                                Rõuge Vallavalitsus
+                                                <br />
+                                                Orienteerumisklubi Võru
+                                                <br />
+                                                Kauplus K-Rauta
+                                                <br />
+                                            </Typography>
                                             <br />
-                                            <br />
-                                            Kodanikuühiskonna Sihtkapital
-                                            <br />
-                                            Andermi OÜ
-                                            <br />
-                                            Navi Külaselts MTÜ
-                                            <br />
-                                            Võru vallavalitsus
-                                            <br />
-                                            Haanja Rattaklubi
-                                            <br />
-                                            Antsla Vallavalitsus
-                                            <br />
-                                            Võru TÜ
-                                            <br />
-                                            Kaitseliidu Võrumaa malev
-                                            <br />
-                                            Lasva Vallavalitsus
-                                            <br />
-                                            Rõuge Vallavalitsus
-                                            <br />
-                                            Orienteerumisklubi Võru
-                                            <br />
-                                            Kauplus K-Rauta
-                                            <br />
-                                        </Typography>
+                                            <img src={Partner3} width="100%" height="100%" />
+                                        </Box>
                                     </Grid>
                                     <Grid item justify="flex-end" md={6}>
                                         <Box width={1}>
